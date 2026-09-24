@@ -32,14 +32,14 @@ The MCP registration file is at `<plugin-root>/.dd_copilot_mcp.json`. If `<plugi
 The registration file contains a plain URL. The domain and toolsets are stored directly in the URL string — there is no shell variable wrapper:
 
 ```
-"url": "https://<current domain>/api/...&toolsets=<current toolsets>"
+"url": "https://<current domain>/v1/mcp?...&toolsets=<current toolsets>"
 ```
 
 ### Editing rule
 
 Edit the `url` string in the `"datadog"` server entry in the registration file. Leave everything else in the file untouched.
 
-To change the domain: replace the hostname — the part of the URL between `https://` and `/api/`.
+To change the domain: replace only the hostname — the part of the URL between `https://` and the next `/`. Preserve the `/v1/mcp` path and the entire query string.
 
 To change the toolsets: replace the value after `toolsets=` in the URL query string. An empty value (`toolsets=`) means "use the server's default toolsets".
 
@@ -48,7 +48,7 @@ Examples:
 Replacing a domain:
 
 ```
-"url": "https://mcp.datadoghq.eu/api/..."  →  "url": "https://mcp.datadoghq.com/api/..."
+"url": "https://mcp.datadoghq.eu/v1/mcp?..."  →  "url": "https://mcp.datadoghq.com/v1/mcp?..."
 ```
 
 Setting an explicit toolset list:
@@ -68,7 +68,7 @@ toolsets=core,alerting  →  toolsets=
 A fresh installation has `not-setup` as the URL hostname:
 
 ```
-"url": "https://not-setup/api/..."
+"url": "https://not-setup/v1/mcp?..."
 ```
 
 This URL prevents the MCP server from connecting. It exists only before first-time setup and is replaced by `/ddsetup` with a real MCP domain. Once replaced, it never returns to `not-setup`.
