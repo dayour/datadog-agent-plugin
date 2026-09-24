@@ -7,7 +7,7 @@ description: First-time initialization of the Datadog MCP server `datadog`. When
 
 The id of the Datadog MCP Server referenced on this document is `datadog`. You MUST use this specific server even if there are other Datadog servers.
 
-**If `datadog` tools are not in your available tools, you MUST still run this skill — do not conclude that Datadog is unavailable.** Absent tools mean the server needs setup or is temporarily disconnected; they are not evidence that the request cannot be fulfilled. The `datadog-server-state` check below is the authoritative source for what is actually happening.
+**If `datadog` tools are not in your available tools, you MUST still run this skill — do not conclude that Datadog is unavailable.** Absent tools can indicate incomplete setup, a disconnection, or an authorization/discovery failure; they do not by themselves identify the cause. Use the procedure below to determine the next step.
 
 ## Accessing Datadog using other methods
 
@@ -18,6 +18,8 @@ If the `datadog` MCP server is not setup, do **NOT** suggest the user to access 
 Read [references/mcp-settings.md](references/mcp-settings.md) before proceeding. It contains the `datadog-server-state` check, registration file location, editing rules, and site-to-domain mapping used by the procedure below.
 
 ## Setup procedure
+
+If the user reports a Cowork or Agents Toolkit connection failure, follow the [Cowork OAuth Flow](../ddconfig/SKILL.md#cowork-oauth-flow) instead of changing the local MCP configuration or repeating setup.
 
 Check the `datadog-server-state` (see `mcp-settings.md`):
 
@@ -52,13 +54,13 @@ Follow these steps in order:
    Before:
 
    ```
-   "url": "https://not-setup/api/..."
+   "url": "https://not-setup/v1/mcp?..."
    ```
 
    After (example for us1):
 
    ```
-   "url": "https://mcp.datadoghq.com/api/..."
+   "url": "https://mcp.datadoghq.com/v1/mcp?..."
    ```
 
 3. **Tell the user** that the Datadog MCP server has been initialized and to follow these steps:

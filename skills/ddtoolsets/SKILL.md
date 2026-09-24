@@ -73,17 +73,17 @@ Edit the `toolsets=` query parameter value directly in the `"url"` field of the 
 Example — adding `alerting` when currently using server defaults (assuming `core` and `synthetics` are defaults):
 
 ```
-"url": "https://mcp.datadoghq.com/api/...&toolsets="
+"url": "https://mcp.datadoghq.com/v1/mcp?...&toolsets="
   →
-"url": "https://mcp.datadoghq.com/api/...&toolsets=core,synthetics,alerting"
+"url": "https://mcp.datadoghq.com/v1/mcp?...&toolsets=core,synthetics,alerting"
 ```
 
 Example — reverting to server defaults:
 
 ```
-"url": "https://mcp.datadoghq.com/api/...&toolsets=core,alerting"
+"url": "https://mcp.datadoghq.com/v1/mcp?...&toolsets=core,alerting"
   →
-"url": "https://mcp.datadoghq.com/api/...&toolsets="
+"url": "https://mcp.datadoghq.com/v1/mcp?...&toolsets="
 ```
 
 ### 5. Confirm
