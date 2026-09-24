@@ -1,6 +1,6 @@
-# Datadog Plugin for Copilot & VS Code
+# Datadog Agent Plugin
 
-Query your Datadog data directly from Copilot and VS Code using natural language. Ask about logs, metrics, traces, dashboards, monitors, and more.
+Query your Datadog data directly with agents using natural language. Ask about logs, metrics, traces, dashboards, monitors, and more.
 
 ## What you need
 
