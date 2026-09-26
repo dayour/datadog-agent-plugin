@@ -1,0 +1,46 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.schema.json",
+    "manifestVersion": "devPreview",
+    "version": "1.3.1",
+    "id": "77f89375-8fd3-43e1-b792-8cfb1820a2d4",
+    "packageName": "com.darbotlabs.datadog-implicit",
+    "developer": {
+        "name": "Darbot Labs",
+        "websiteUrl": "https://github.com/dayour/datadog-agent-plugin",
+        "privacyUrl": "https://www.datadoghq.com/legal/privacy/",
+        "termsOfUseUrl": "https://www.datadoghq.com/legal/terms/"
+    },
+    "name": {
+        "short": "Datadog Implicit",
+        "full": "Datadog for Copilot Cowork (Implicit DCR)"
+    },
+    "description": {
+        "short": "Investigate Datadog telemetry with implicit Cowork DCR",
+        "full": "Connect Copilot Cowork to Datadog through its remote MCP server using Cowork automatic runtime DCR (authorization omitted)."
+    },
+    "icons": {
+        "outline": "outline.png",
+        "color": "color.png"
+    },
+    "accentColor": "#632CA6",
+    "agentConnectors": [
+        {
+            "id": "datadog-us1",
+            "displayName": "Datadog Implicit MCP",
+            "description": "Read Datadog telemetry using implicit Cowork DCR (omitted authorization).",
+            "toolSource": {
+                "remoteMcpServer": {
+                    "mcpServerUrl": "https://mcp.datadoghq.com/v1/mcp?referrer_ide=copilot-cowork&plugin_version=1.3.1&toolsets=core",
+                    "mcpToolDescription": {
+                        "file": "tools/datadog-tools.json"
+                    }
+                }
+            }
+        }
+    ],
+    "agentSkills": [
+        {
+            "folder": "./skills/datadog-observability"
+        }
+    ]
+}

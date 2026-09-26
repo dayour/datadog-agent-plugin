@@ -1,0 +1,50 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.schema.json",
+  "manifestVersion": "devPreview",
+  "version": "1.3.1",
+  "id": "${{TEAMS_APP_ID}}",
+  "packageName": "com.darbotlabs.datadog-cowork",
+  "developer": {
+    "name": "Darbot Labs",
+    "websiteUrl": "https://github.com/dayour/datadog-agent-plugin",
+    "privacyUrl": "https://www.datadoghq.com/legal/privacy/",
+    "termsOfUseUrl": "https://www.datadoghq.com/legal/terms/"
+  },
+  "name": {
+    "short": "Datadog",
+    "full": "Datadog for Copilot Cowork"
+  },
+  "description": {
+    "short": "Investigate Datadog logs, metrics, traces, monitors, and dashboards",
+    "full": "Connect Copilot Cowork to Datadog through its remote MCP server to investigate logs, metrics, traces, monitors, dashboards, incidents, and service health with the signed-in user's permissions."
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "accentColor": "#632CA6",
+  "agentSkills": [
+    {
+      "folder": "./skills/datadog-observability"
+    }
+  ],
+  "agentConnectors": [
+    {
+      "id": "datadog-us1",
+      "displayName": "Datadog US1 MCP",
+      "description": "Read Datadog telemetry using the signed-in user's permissions.",
+      "toolSource": {
+        "remoteMcpServer": {
+          "mcpServerUrl": "https://mcp.datadoghq.com/v1/mcp?referrer_ide=copilot-cowork&plugin_version=1.3.1&toolsets=core",
+          "mcpToolDescription": {
+            "file": "tools/datadog-tools.json"
+          },
+          "authorization": {
+            "type": "OAuthPluginVault",
+            "referenceId": "${{DATADOG_OAUTH_CONFIGURATION_ID}}"
+          }
+        }
+      }
+    }
+  ]
+}

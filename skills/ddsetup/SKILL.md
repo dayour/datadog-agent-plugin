@@ -19,8 +19,6 @@ Read [references/mcp-settings.md](references/mcp-settings.md) before proceeding.
 
 ## Setup procedure
 
-If the user reports a Cowork or Agents Toolkit connection failure, follow the [Cowork OAuth Flow](../ddconfig/SKILL.md#cowork-oauth-flow) instead of changing the local MCP configuration or repeating setup.
-
 Check the `datadog-server-state` (see `mcp-settings.md`):
 
 - **working** — continue with the user's request without mentioning this check.

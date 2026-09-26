@@ -13,8 +13,6 @@ Read [references/mcp-settings.md](references/mcp-settings.md) before proceeding.
 
 ## Entry flow
 
-If the user reports a Cowork or Agents Toolkit connection failure, use the [Cowork OAuth Flow](#cowork-oauth-flow) instead of the local configuration flows below.
-
 Check the `datadog-server-state` (see `mcp-settings.md`). Use the `datadog://mcp/whoami` resource on the `datadog` server as the MCP call (do NOT use any other Datadog MCP server). If the call fails or the resource is unavailable, continue with the reference's failure checks rather than waiting for resource content. Proceed based on the results:
 
 - **datadog-server-state=working** and **valid content** — without any preamble, immediately show the user their current connection (from `whoami`): user name and email, organization name, and site (the `dd_site` value). Then let the user choose between [using a different Datadog MCP domain or site](#domain-flow) or [switching to a different Datadog organization](#organization-flow).
@@ -42,16 +40,6 @@ The server is configured but not responding. Read the current domain from the re
 - **Network or access.** The user's network may be blocking the connection, or their Datadog account may not have API access, like not having the `MCP Read` permission.
 
 If the domain looks wrong, suggest running the [Domain Flow](#domain-flow) to correct it.
-
-## Cowork OAuth Flow
-
-Read the [Cowork OAuth limitations](../../README.md#cowork-oauth-limitations). Ask which stage failed if it is not already clear, then explain the matching blocker in plain language:
-
-- **No Connect action / cannot be discovered:** the reported Cowork discovery path does not fall back to well-known metadata when Datadog's authentication challenge header is absent. This requires a host-client fix, not repeated setup or domain changes.
-- **Registration rejected with InvalidAuthorizationServerMetadata:** Agents Toolkit's `dcr/register` requires a confidential client, while Datadog advertises public clients. Do not recommend a dummy client secret.
-- **Sign-in rejected with Mismatching redirect URI:** static provisioning can succeed without working sign-in. The reported failure after an organization-specific redirect needs Datadog investigation; do not claim the root cause is confirmed or recommend disabling redirect validation.
-
-Do not edit the local MCP registration file for these failures, add Cowork `authorization` blocks to it, or suggest static registration as a multi-organization solution. Explain that implicit per-user registration is the intended approach but remains blocked upstream. Offer the relevant Microsoft or Datadog escalation described in the README and request only sanitized diagnostics, never credentials or full sign-in URLs. Stop rather than looping through setup or reauthentication.
 
 ## Domain Flow
 

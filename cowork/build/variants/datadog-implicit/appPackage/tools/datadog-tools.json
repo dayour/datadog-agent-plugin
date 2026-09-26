@@ -1,0 +1,186 @@
+{
+  "tools": [
+    {
+      "name": "get_datadog_metric",
+      "description": "Queries and analyzes historical or real-time metric data, supporting custom queries and aggregations. Useful for checking CPU, memory, latency, and system metrics.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Get Datadog Metric",
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "search_datadog_hosts",
+      "description": "Lists and provides information about monitored hosts, supporting filtering and searching (e.g. host:HP11D).",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Search Datadog Hosts",
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "get_datadog_metric_context",
+      "description": "Retrieves detailed information about a metric including metadata, available tags, and tag values for filtering and grouping.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Get Datadog Metric Context",
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "search_datadog_monitors",
+      "description": "Retrieves information about Datadog monitors, including their statuses, thresholds, and alert conditions.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Search Datadog Monitors",
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "search_datadog_logs",
+      "description": "Searches logs with filters (time, query, service, host, storage tier) and returns log details.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Search Datadog Logs",
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "analyze_datadog_logs",
+      "description": "Analyze Datadog logs using SQL queries for counting, aggregations, and numerical analysis.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Analyze Datadog Logs",
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "search_datadog_events",
+      "description": "Searches events like monitor alerts, deployment notifications, infrastructure changes, security findings, and service status changes.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Search Datadog Events",
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "search_datadog_incidents",
+      "description": "Retrieves a list of Datadog incidents, including their state, severity, and metadata.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Search Datadog Incidents",
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "get_datadog_incident",
+      "description": "Retrieves detailed information about an incident.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Get Datadog Incident",
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "search_datadog_dashboards",
+      "description": "Lists available Datadog dashboards and key details.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Search Datadog Dashboards",
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "get_datadog_dashboard",
+      "description": "Retrieves a Datadog dashboard by ID, returning its title, description, tags, and widgets.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Get Datadog Dashboard",
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "search_datadog_entities",
+      "description": "Searches Datadog's Catalog for service identity, ownership, and upstream and downstream dependencies.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Search Datadog Entities",
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "search_datadog_spans",
+      "description": "Retrieves spans from APM traces with filters such as service, time, resource, and error status.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Search Datadog Spans",
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    },
+    {
+      "name": "get_datadog_trace",
+      "description": "Fetches a complete trace from Datadog APM using a trace ID.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "annotations": {
+        "title": "Get Datadog Trace",
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    }
+  ]
+}

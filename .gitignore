@@ -1,0 +1,4 @@
+cowork/appPackage/build/
+cowork/env/.env.*
+!cowork/env/.env.dev.example
+.playwright-mcp/
